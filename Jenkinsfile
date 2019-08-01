@@ -23,9 +23,8 @@ pipeline {
         script {
             config_data = readJSON file: '/Users/dianabank/Desktop/test_pipeline/config.json'
             def reports = config_data.tables
-            reports.each { 
-              println it
-            }
+            echo "${config_data}"
+            reports.each { println it }
             /*config_data = readJSON file: '/Users/dianabank/Desktop/test_pipeline/config.json'
             def reports = config_data.reports
             reports.each { 
