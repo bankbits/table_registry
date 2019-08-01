@@ -38,7 +38,7 @@ pipeline {
             echo "${output_test}"
               
             all_reports = readJSON file: '/Users/dianabank/Desktop/table_registry/reports.json'
-            all_reports.bfa_tables.append(output_test)
+            all_reports.bfa_tables = all_reports.bfa_tables << output_test
             //String newJson = new JsonBuilder(all_reports).toPrettyString()
             echo "${all_reports}"
             //echo "${all_reports["bfa_tables"]}"
