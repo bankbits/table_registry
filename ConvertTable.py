@@ -10,12 +10,12 @@ connection = urllib2.urlopen('http://bflsolr.innovate.ibm.com/solr/bfapplogs-pro
 response = json.load(connection)
 
 
-print (response['response']['numFound'], "documents found.")
+# print (response['response']['numFound'], "documents found.")
 
 doc_first = response['response']['docs'][0]
 
 columns = list(doc_first.keys())
-print(columns)
+#print(columns)
 
 def columnSchema(cols):
     col = []
@@ -72,7 +72,7 @@ gen_table = {
 # "bluefringe CRUDReportRegistry createReportRegistry --data \'" + 
 
 final_cmd = json.dumps(gen_table)
-print(json.loads(json.dumps(gen_table)))
+print(json.dumps(gen_table))
 #print(json.dumps(gen_table))
 
 with open(collection + '.json', 'w') as outfile:
