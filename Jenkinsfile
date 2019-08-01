@@ -34,7 +34,7 @@ pipeline {
             script_str = 'python ConvertTable.py'
             script_output = sh(returnStdout: true, script: script_str)
             
-           `def output_test = readJSON text: script_output
+            def output_test = readJSON text: script_output
             echo "${output_test}"
               
             
