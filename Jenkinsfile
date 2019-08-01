@@ -28,7 +28,13 @@ pipeline {
               def query = it['query']
               script_str = 'python ConvertTable.py' + ' ' + query
               script_output = sh(returnStdout: true, script: script_str)
-              echo "${script_output}"
+              def output_test = readJSON text: script_output
+
+              all_reports = readJSON file: '/Users/dianabank/Desktop/table_registry/reports.json'
+              all_reports.bfa_tables = all_reports.bfa_tables << output_test
+              echo "${all_reports}"
+              writeJSON file: '/Users/dianabank/Desktop/table_registry/reports.json', json: all_reports
+              
             }
             /*config_data = readJSON file: '/Users/dianabank/Desktop/test_pipeline/config.json'
             def reports = config_data.reports
