@@ -37,7 +37,11 @@ pipeline {
             def output_test = readJSON text: script_output
             echo "${output_test}"
               
+            all_reports = readJSON file: '/Users/dianabank/Desktop/test_pipeline/reports.json'
             
+            echo "${all_reports["bfa_tables"]}"
+            echo "${all_reports}"
+          
         }
       }
     }
