@@ -21,7 +21,7 @@ pipeline {
     stage('Execute script') {
       steps {
         script {
-            config_data = readJSON file: '/Users/dianabank/Desktop/test_pipeline/config.json'
+            config_data = readJSON file: '/Users/dianabank/Desktop/table_registry/config.json'
             def reports = config_data.tables
             echo "${config_data}"
             reports.each { println it }
