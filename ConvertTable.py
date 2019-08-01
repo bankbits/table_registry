@@ -6,7 +6,9 @@ import sys
 collection = "bfapplogs-prod-all"
 host       = "http://bflsolr.innovate.ibm.com"
 
-connection = urllib2.urlopen('http://bflsolr.innovate.ibm.com/solr/bfapplogs-prod-all/select?q=*:*')
+query = sys.argv[1]
+
+connection = urllib2.urlopen(query)
 response = json.load(connection)
 
 
