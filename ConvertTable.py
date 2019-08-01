@@ -33,7 +33,7 @@ for document in response['response']['docs']:
 collection = "test"
 
 gen_table = {
-    "bfa_tables": [{
+   
     "ID": collection,
     "Name": collection,
     "Description": "Logs",
@@ -66,7 +66,6 @@ gen_table = {
         "test1":"testtest1"
     },
     "Metadata": {}
-    }]
 }   
 
 # "bluefringe CRUDReportRegistry createReportRegistry --data \'" + 
