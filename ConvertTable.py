@@ -69,9 +69,9 @@ gen_table = {
     }]
 }   
 
+# "bluefringe CRUDReportRegistry createReportRegistry --data \'" + 
 
-
-final_cmd = "bluefringe CRUDReportRegistry createReportRegistry --data \'" + json.dumps(gen_table) + "\'"
+final_cmd = json.dumps(gen_table)
 print(final_cmd)
 #print(json.dumps(gen_table))
 
