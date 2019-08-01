@@ -34,14 +34,14 @@ collection = "test"
 
 gen_table = {
     "bfa_tables": [{
-    'ID': collection,
-    'Name': collection,
-    'Description': "Logs",
-    'Columns': {
+    "ID": collection,
+    "Name": collection,
+    "Description": "Logs",
+    "Columns": {
          "columns": col_json
     },
     "RequiredRoles":None,
-    'Sources': {
+    "Sources": {
         "sources":[{
             "type": "SOLR",
             "lowTime": 34565,
@@ -51,7 +51,7 @@ gen_table = {
             "database": collection
         }]
     },
-    'Filters': {
+    "Filters": {
         "filters":[{
             "id": "",
             "name": "",
@@ -72,7 +72,7 @@ gen_table = {
 # "bluefringe CRUDReportRegistry createReportRegistry --data \'" + 
 
 final_cmd = json.dumps(gen_table)
-print(final_cmd)
+print(json.dumps(gen_table))
 #print(json.dumps(gen_table))
 
 with open(collection + '.json', 'w') as outfile:
