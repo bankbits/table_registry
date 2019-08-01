@@ -21,7 +21,11 @@ pipeline {
     stage('Execute script') {
       steps {
         script {
-            
+            config_data = readJSON file: '/Users/dianabank/Desktop/test_pipeline/config.json'
+            def reports = config_data.reports
+            reports.each { 
+              echo "${it}"
+            }
             /*config_data = readJSON file: '/Users/dianabank/Desktop/test_pipeline/config.json'
             def reports = config_data.reports
             reports.each { 
@@ -39,11 +43,8 @@ pipeline {
               
             all_reports = readJSON file: '/Users/dianabank/Desktop/table_registry/reports.json'
             all_reports.bfa_tables = all_reports.bfa_tables << output_test
-            //String newJson = new JsonBuilder(all_reports).toPrettyString()
             echo "${all_reports}"
             writeJSON file: '/Users/dianabank/Desktop/table_registry/reports.json', json: all_reports
-            //echo "${all_reports["bfa_tables"]}"
-            //echo "${all_reports}"
           
         }
       }

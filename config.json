@@ -1,0 +1,10 @@
+{
+    "tables": [
+        {
+            "query": "http://bflsolr.innovate.ibm.com/solr/bfapplogs-prod-all/select?q=*:*"
+        },
+        {
+            "query": "http://bflsolr.innovate.ibm.com/solr/bfapplogs-prod-all/select?q=*:*"
+        }
+    ]
+}
