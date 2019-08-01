@@ -22,7 +22,7 @@ pipeline {
       steps {
         script {
             config_data = readJSON file: '/Users/dianabank/Desktop/test_pipeline/config.json'
-            def reports = config_data.reports
+            def reports = config_data.tables
             reports.each { 
               echo "${it}"
             }
