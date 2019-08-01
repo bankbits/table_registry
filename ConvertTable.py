@@ -72,7 +72,7 @@ gen_table = {
 # "bluefringe CRUDReportRegistry createReportRegistry --data \'" + 
 
 final_cmd = json.dumps(gen_table)
-print(json.dumps(gen_table))
+print(json.loads(json.dumps(gen_table)))
 #print(json.dumps(gen_table))
 
 with open(collection + '.json', 'w') as outfile:
