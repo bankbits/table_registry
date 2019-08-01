@@ -41,6 +41,7 @@ pipeline {
             all_reports.bfa_tables = all_reports.bfa_tables << output_test
             //String newJson = new JsonBuilder(all_reports).toPrettyString()
             echo "${all_reports}"
+            writeJSON file: '/Users/dianabank/Desktop/table_registry/reports.json', json: all_reports
             //echo "${all_reports["bfa_tables"]}"
             //echo "${all_reports}"
           
